@@ -21,13 +21,31 @@ switch(type_event)
 			var _sock = ds_list_find_value(socket_list,i);
 			if _sock != socket
 			{
+				var _slave = ds_map_find_value(socket_to_instanceid,_sock);
+				buffer_seek(server_buffer,buffer_seek_start,0);
+				buffer_write(server_buffer,buffer_u8,network.player_joined);
+				buffer_write(server_buffer,buffer_u8,_sock);
+				buffer_write(server_buffer,buffer_u16,_slave.x);
+				buffer_write(server_buffer,buffer_u16,_slave.y);
+				network_send_packet(_sock,server_buffer,buffer_tell(server_buffer));	
+			}
+			i+=1;
+		}
+		
+		var i = 0;
+		repeat(ds_list_size(socket_list))
+		{
+			var _sock = ds_list_find_value(socket_list,i);
+			if _sock != socket
+			{
 				buffer_seek(server_buffer,buffer_seek_start,0);
 				buffer_write(server_buffer,buffer_u8,network.player_joined);
 				buffer_write(server_buffer,buffer_u8,socket);
 				buffer_write(server_buffer,buffer_u16,_player.x);
 				buffer_write(server_buffer,buffer_u16,_player.y);
-				network_send_packet(socket,server_buffer,buffer_tell(server_buffer));	
+				network_send_packet(_sock,server_buffer,buffer_tell(server_buffer));	
 			}
+			i+=1;
 		}
 		
 		break;
