@@ -1,3 +1,10 @@
+enum network
+{
+	move,		//=0
+	jump,		//=1...
+	chat
+}
+
 port = 64198;
 max_clients = 12;
 
