@@ -27,7 +27,7 @@ switch(type_event)
 				buffer_write(server_buffer,buffer_u8,_sock);
 				buffer_write(server_buffer,buffer_u16,_slave.x);
 				buffer_write(server_buffer,buffer_u16,_slave.y);
-				network_send_packet(_sock,server_buffer,buffer_tell(server_buffer));	
+				network_send_packet(socket,server_buffer,buffer_tell(server_buffer));	
 			}
 			i+=1;
 		}
@@ -53,6 +53,19 @@ switch(type_event)
 	case network_type_disconnect:
 		socket = ds_map_find_value(async_load,"socket");
 		ds_list_delete(socket_list,ds_list_find_index(socket_list,socket));
+		ds_map_delete(socket_to_instanceid,socket);
+		
+		var i = 0
+		repeat(ds_list_size(socket_list))
+		{
+			var _sock = ds_list_find_value(socket_list,i);
+			buffer_seek(server_buffer,buffer_seek_start,0);
+			buffer_write(server_buffer,buffer_u8,network.player.disconnect);
+			buffer_write(server_buffer,buffer_u8,socket);
+			network_send_packet(_sock,server_buffer,buffer_tell(server_buffer));
+			i++;	
+		}
+		
 		with(ds_map_find_value(socket_to_instanceid,socket))
 		{
 			instance_destroy();

@@ -13,12 +13,20 @@ switch(msgid)
 		_player.x = move_x
 		_player.y = move_y
 		
-		buffer_seek(server_buffer,buffer_seek_start,0);
-		buffer_write(server_buffer,buffer_u8,network.move);
+		var i = 0;
+		repeat(ds_list_size(socket_list)){
+			
+			var _sock = ds_list_find_value(socket_list,i)
+			
+			buffer_seek(server_buffer,buffer_seek_start,0);
+			buffer_write(server_buffer,buffer_u8,network.move);
+			buffer_write(server_buffer,buffer_u8,socket);
+			buffer_write(server_buffer,buffer_u16,move_x);
+			buffer_write(server_buffer,buffer_u16,move_y);
 		
-		buffer_write(server_buffer,buffer_u16,move_x);
-		buffer_write(server_buffer,buffer_u16,move_y);
+			network_send_packet(_sock,server_buffer,buffer_tell(server_buffer));
+			i++;
+		}
 		
-		network_send_packet(socket,server_buffer,buffer_tell(server_buffer));
 	break;
 }
