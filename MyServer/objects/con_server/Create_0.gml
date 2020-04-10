@@ -1,5 +1,7 @@
 enum network
 {
+	player_connect,
+	player_joined,
 	move,		//=0
 	jump,		//=1...
 	chat
@@ -12,3 +14,6 @@ network_create_server(network_socket_tcp,port,max_clients);
 
 server_buffer = buffer_create(1024,buffer_fixed,1);
 socket_list = ds_list_create();
+socket_to_instanceid = ds_map_create();
+playerSpawn_x = 100;
+playerSpawn_y = 100;

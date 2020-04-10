@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "68892416-69c3-4735-84e3-b64bfbd6d88e",
+            "Value": {
+                "id": "34bd03fd-1126-4069-b16f-cb3a11003934",
+                "resourcePath": "objects\\obj_slave\\obj_slave.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "7f14c4ed-d396-4229-9987-e4ba2060bebd",
             "Value": {
                 "id": "85193794-ff14-4c0a-9ba9-f05da89e11b4",
@@ -143,6 +151,14 @@
             }
         },
         {
+            "Key": "a49ea20f-131a-4213-9b81-9e3bcb944a27",
+            "Value": {
+                "id": "debf967a-9d14-480d-9ef9-85eaee52e0ff",
+                "resourcePath": "sprites\\spr_Slave\\spr_Slave.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "aa551b94-6162-4ce8-a734-0cc6cb9eabe9",
             "Value": {
                 "id": "2ad4b6b8-7a7d-497f-90af-85eb4f8b08ec",
@@ -170,7 +186,7 @@
             "Key": "dcf1ff99-9958-4c09-ab3e-d3226f69dc70",
             "Value": {
                 "id": "79ffb026-4aaa-4908-b17d-203469a24cc0",
-                "resourcePath": "sprites\\Kirby\\Kirby.yy",
+                "resourcePath": "sprites\\Spr_Kirby\\Spr_Kirby.yy",
                 "resourceType": "GMSprite"
             }
         },

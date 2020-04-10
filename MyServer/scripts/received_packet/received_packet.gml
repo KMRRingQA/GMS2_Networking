@@ -9,6 +9,10 @@ switch(msgid)
 		var move_x = buffer_read(buffer,buffer_u16);
 		var move_y = buffer_read(buffer,buffer_u16);
 		
+		var _player = ds_map_find_value(socket_to_instanceid,socket);
+		_player.x = move_x
+		_player.y = move_y
+		
 		buffer_seek(server_buffer,buffer_seek_start,0);
 		buffer_write(server_buffer,buffer_u8,network.move);
 		

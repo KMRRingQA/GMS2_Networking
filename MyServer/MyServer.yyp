@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "6d132b77-1040-4085-aaea-2d6442ecd88d",
+            "Value": {
+                "id": "5c4d6b04-4d3a-4f98-baa3-39180ff6fdc2",
+                "resourcePath": "sprites\\Spr_Kirby\\Spr_Kirby.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7b363255-a7f2-425d-aa05-fc45e7485a00",
             "Value": {
                 "id": "dfaeeb48-1f34-47ce-b07f-374c7924832b",
@@ -188,6 +196,14 @@
                 "id": "6728d08c-135c-4a45-8e89-ac8a90633160",
                 "resourcePath": "views\\deb40173-e201-446e-ae0a-9ffdaabe33be.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e850dbfb-4b92-473a-b5ec-324e7dd6cef0",
+            "Value": {
+                "id": "7d38ea80-eb0b-40b9-8461-40838cbf16aa",
+                "resourcePath": "objects\\obj_player\\obj_player.yy",
+                "resourceType": "GMObject"
             }
         }
     ],

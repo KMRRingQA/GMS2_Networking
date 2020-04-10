@@ -1,5 +1,7 @@
 enum network
 {
+	player_connect,
+	player_joined,
 	move,		//=0
 	jump,		//=1...
 	chat
