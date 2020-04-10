@@ -53,7 +53,7 @@ switch(type_event)
 	case network_type_disconnect:
 		socket = ds_map_find_value(async_load,"socket");
 		ds_list_delete(socket_list,ds_list_find_index(socket_list,socket));
-		ds_map_delete(socket_to_instanceid,socket);
+		
 		
 		var i = 0
 		repeat(ds_list_size(socket_list))
@@ -70,6 +70,7 @@ switch(type_event)
 		{
 			instance_destroy();
 		}
+		ds_map_delete(socket_to_instanceid,socket);
 		break;
 		
 	case network_type_data:

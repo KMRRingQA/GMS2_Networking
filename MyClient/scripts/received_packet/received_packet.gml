@@ -26,6 +26,21 @@ switch(msgid)
 		
 		ds_map_add(socket_to_instanceid,_socket,_slave);
 		break;
+		
+	case network.player_disconnect:
+	
+		var _socket = buffer_read(buffer,buffer_u8);
+		var _player = ds_map_find_value(socket_to_instanceid,_socket);
+		
+		with(_player)
+		{
+			instance_destroy();
+		}
+		
+		ds_map_delete(socket_to_instanceid,_socket);
+		
+		break;
+		
 	case network.move:	
 		var _sock = buffer_read(buffer,buffer_u8);
 		var move_x = buffer_read(buffer,buffer_u16);
