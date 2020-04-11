@@ -16,8 +16,33 @@ down = keyboard_check(ord("S"));
 x_vel = 8*(right-left);
 y_vel = 8*(down-up);
 
+firingdelay=firingdelay-1
+if (mouse_check_button(mb_left)) && (firingdelay<0)
+{
+	firingdelay = 30;
+	with(instance_create_layer(x,y,"Fireballs",obj_fireball))
+	{
+		speed = 25;
+		direction = point_direction(x,y,mouse_x,mouse_y);
+		image_angle = direction;
+	}
+}
+
+
+if (dead=true){
+	x_vel = 0;
+	y_vel = 0;
+	sprite_index = spr_PlayerDead;
+}
 x+=x_vel;
 y+=y_vel;
+
+if (x_vel<0){
+	image_xscale=-1;
+}
+if (x_vel>0){
+	image_xscale=1;
+}
 
 buffer_seek(con_client.client_buffer,buffer_seek_start,0);
 buffer_write(con_client.client_buffer,buffer_u8,network.updatePosition);
