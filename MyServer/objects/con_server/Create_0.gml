@@ -4,7 +4,7 @@ enum network
 	player_joined,
 	player_disconnect,
 	move,		//=0
-	jump,		//=1...
+	up,		//=1...
 	chat
 }
 

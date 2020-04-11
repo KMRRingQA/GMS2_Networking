@@ -52,4 +52,16 @@ switch(msgid)
 		_player.y = move_y
 		
 		break;
+		
+	case network.up:
+		var _sock = buffer_read(buffer,buffer_u8);
+		var move_x = buffer_read(buffer,buffer_u16);
+		var move_y = buffer_read(buffer,buffer_u16);
+		
+		_player = ds_map_find_value(socket_to_instanceid,_sock);
+		
+		_player.x = move_x
+		_player.y = move_y
+		
+		break;
 }
