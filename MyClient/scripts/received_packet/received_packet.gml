@@ -53,7 +53,7 @@ switch(msgid)
 		
 		break;
 		
-	case network.up:
+	case network.updatePosition:
 		var _sock = buffer_read(buffer,buffer_u8);
 		var move_x = buffer_read(buffer,buffer_u16);
 		var move_y = buffer_read(buffer,buffer_u16);
