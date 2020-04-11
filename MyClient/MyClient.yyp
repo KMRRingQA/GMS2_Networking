@@ -186,7 +186,7 @@
             "Key": "dcf1ff99-9958-4c09-ab3e-d3226f69dc70",
             "Value": {
                 "id": "79ffb026-4aaa-4908-b17d-203469a24cc0",
-                "resourcePath": "sprites\\Spr_Kirby\\Spr_Kirby.yy",
+                "resourcePath": "sprites\\Spr_Player\\Spr_Player.yy",
                 "resourceType": "GMSprite"
             }
         },
