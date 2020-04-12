@@ -4,29 +4,7 @@ switch(type_event)
 	case network_type_connect:
 		socket = ds_map_find_value(async_load,"socket");
 		ds_list_add(socket_list,socket);
-		switch(global.playercount)
-		{
-			case 0:
-				playerSpawn_x = 100;
-				playerSpawn_y = 100;
-				global.playercount++;
-				break;
-			case 1:
-				playerSpawn_x = 930;
-				playerSpawn_y = 100;
-				global.playercount++;
-				break;
-			case 2:
-				playerSpawn_x = 930;
-				playerSpawn_y = 670;
-				global.playercount++;
-				break;
-			case 3:
-				playerSpawn_x = 100;
-				playerSpawn_y = 670;
-				global.playercount++;
-				break;
-		}
+		
 		var _player = instance_create_depth(playerSpawn_x,playerSpawn_y,depth,obj_player);
 		ds_map_add(socket_to_instanceid,socket,_player);
 		

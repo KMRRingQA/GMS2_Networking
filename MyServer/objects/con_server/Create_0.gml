@@ -17,3 +17,5 @@ server_buffer = buffer_create(1024,buffer_fixed,1);
 socket_list = ds_list_create();
 socket_to_instanceid = ds_map_create();
 global.playercount = 0;
+playerSpawn_x=500;
+playerSpawn_y=300;
